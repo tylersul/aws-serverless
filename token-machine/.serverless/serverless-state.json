@@ -190,7 +190,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-token-authorization/dev/1638894571972-2021-12-07T16:29:31.972Z/serverless-token-authorization.zip"
+                "S3Key": "serverless/serverless-token-authorization/dev/1638981342700-2021-12-08T16:35:42.700Z/serverless-token-authorization.zip"
               },
               "Handler": "handler.hello",
               "Runtime": "nodejs12.x",
@@ -215,7 +215,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-token-authorization/dev/1638894571972-2021-12-07T16:29:31.972Z/serverless-token-authorization.zip"
+                "S3Key": "serverless/serverless-token-authorization/dev/1638981342700-2021-12-08T16:35:42.700Z/serverless-token-authorization.zip"
               },
               "Handler": "handler.generateToken",
               "Runtime": "nodejs12.x",
@@ -240,7 +240,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-token-authorization/dev/1638894571972-2021-12-07T16:29:31.972Z/serverless-token-authorization.zip"
+                "S3Key": "serverless/serverless-token-authorization/dev/1638981342700-2021-12-08T16:35:42.700Z/serverless-token-authorization.zip"
               },
               "Handler": "handler.authorize",
               "Runtime": "nodejs12.x",
@@ -258,34 +258,34 @@
               "AuthorizeLogGroup"
             ]
           },
-          "HelloLambdaVersion35Pi8qdoQ5xHna2JGlO5KMERKWWowYzoxuIjQE4V0": {
+          "HelloLambdaVersioniiHjLU81hJPf6t4yLwNLBCstEOuzUGNFI4s0azAk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HelloLambdaFunction"
               },
-              "CodeSha256": "PfD16sXGJusksEnOO3UJfYu7NrouCdoH10VrhWH4g9U="
+              "CodeSha256": "I27gGyYzbPZf+u2+9xn3NMc7S+O0EnFskzLZ3O3heSY="
             }
           },
-          "GenerateTokenLambdaVersionIKYiPqYgEk5hmUeuh5Ylrq7Qlc6u0mqJFBPlpI5bY": {
+          "GenerateTokenLambdaVersionlmaOfIlhYM3qLRJU7NzAebyQkDjMRLkfXk3Gm6jYbNM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GenerateTokenLambdaFunction"
               },
-              "CodeSha256": "PfD16sXGJusksEnOO3UJfYu7NrouCdoH10VrhWH4g9U="
+              "CodeSha256": "I27gGyYzbPZf+u2+9xn3NMc7S+O0EnFskzLZ3O3heSY="
             }
           },
-          "AuthorizeLambdaVersionlXcqEH6V6v5airX3AwPbmJJcL0kyA3u0zdccMswips": {
+          "AuthorizeLambdaVersionQqD68VbbkKwEtc2jKA0ssnwdGjZ8NlwzuMRrFUY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AuthorizeLambdaFunction"
               },
-              "CodeSha256": "PfD16sXGJusksEnOO3UJfYu7NrouCdoH10VrhWH4g9U="
+              "CodeSha256": "I27gGyYzbPZf+u2+9xn3NMc7S+O0EnFskzLZ3O3heSY="
             }
           },
           "ApiGatewayRestApi": {
@@ -408,7 +408,7 @@
                       ":lambda:path/2015-03-31/functions/",
                       {
                         "Fn::GetAtt": [
-                          "AuthorizeLambdaFunction",
+                          "GenerateTokenLambdaFunction",
                           "Arn"
                         ]
                       },
@@ -420,7 +420,7 @@
               "MethodResponses": []
             },
             "DependsOn": [
-              "AuthorizeLambdaPermissionApiGateway"
+              "GenerateTokenLambdaPermissionApiGateway"
             ]
           },
           "AuthorizeApiGatewayAuthorizer": {
@@ -457,7 +457,7 @@
               "Type": "TOKEN"
             }
           },
-          "ApiGatewayDeployment1638894570196": {
+          "ApiGatewayDeployment1638981341177": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -467,7 +467,6 @@
             },
             "DependsOn": [
               "ApiGatewayMethodHelloGet",
-              "ApiGatewayMethodRegisterPost",
               "ApiGatewayMethodRegisterPost"
             ]
           },
@@ -485,11 +484,11 @@
                 }
               ]
             },
-            "DependsOn": "ApiGatewayDeployment1638894570196"
+            "DependsOn": "ApiGatewayDeployment1638981341177"
           },
           "ApiGatewayUsagePlan": {
             "Type": "AWS::ApiGateway::UsagePlan",
-            "DependsOn": "ApiGatewayDeployment1638894570196",
+            "DependsOn": "ApiGatewayDeployment1638981341177",
             "Properties": {
               "ApiStages": [
                 {
@@ -639,7 +638,7 @@
           "HelloLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HelloLambdaVersion35Pi8qdoQ5xHna2JGlO5KMERKWWowYzoxuIjQE4V0"
+              "Ref": "HelloLambdaVersioniiHjLU81hJPf6t4yLwNLBCstEOuzUGNFI4s0azAk"
             },
             "Export": {
               "Name": "sls-serverless-token-authorization-dev-HelloLambdaFunctionQualifiedArn"
@@ -648,7 +647,7 @@
           "GenerateTokenLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GenerateTokenLambdaVersionIKYiPqYgEk5hmUeuh5Ylrq7Qlc6u0mqJFBPlpI5bY"
+              "Ref": "GenerateTokenLambdaVersionlmaOfIlhYM3qLRJU7NzAebyQkDjMRLkfXk3Gm6jYbNM"
             },
             "Export": {
               "Name": "sls-serverless-token-authorization-dev-GenerateTokenLambdaFunctionQualifiedArn"
@@ -657,7 +656,7 @@
           "AuthorizeLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AuthorizeLambdaVersionlXcqEH6V6v5airX3AwPbmJJcL0kyA3u0zdccMswips"
+              "Ref": "AuthorizeLambdaVersionQqD68VbbkKwEtc2jKA0ssnwdGjZ8NlwzuMRrFUY"
             },
             "Export": {
               "Name": "sls-serverless-token-authorization-dev-AuthorizeLambdaFunctionQualifiedArn"
@@ -787,10 +786,7 @@
               "authorizer": {
                 "name": "authorize",
                 "arn": {
-                  "Fn::GetAtt": [
-                    "AuthorizeLambdaFunction",
-                    "Arn"
-                  ]
+                  "$ref": "$[\"service\"][\"provider\"][\"compiledCloudFormationTemplate\"][\"Resources\"][\"AuthorizeLambdaPermissionApiGateway\"][\"Properties\"][\"FunctionName\"]"
                 },
                 "managedExternally": false,
                 "identitySource": "method.request.header.Authorization"
@@ -805,7 +801,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "HelloLambdaVersion35Pi8qdoQ5xHna2JGlO5KMERKWWowYzoxuIjQE4V0"
+        "versionLogicalId": "HelloLambdaVersioniiHjLU81hJPf6t4yLwNLBCstEOuzUGNFI4s0azAk"
       },
       "generateToken": {
         "handler": "handler.generateToken",
@@ -825,27 +821,18 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "GenerateTokenLambdaVersionIKYiPqYgEk5hmUeuh5Ylrq7Qlc6u0mqJFBPlpI5bY"
+        "versionLogicalId": "GenerateTokenLambdaVersionlmaOfIlhYM3qLRJU7NzAebyQkDjMRLkfXk3Gm6jYbNM"
       },
       "authorize": {
         "handler": "handler.authorize",
-        "events": [
-          {
-            "http": {
-              "path": "register",
-              "method": "post",
-              "private": true,
-              "integration": "AWS_PROXY"
-            }
-          }
-        ],
+        "events": [],
         "name": "serverless-token-authorization-dev-authorize",
         "package": {},
         "memory": 1024,
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "AuthorizeLambdaVersionlXcqEH6V6v5airX3AwPbmJJcL0kyA3u0zdccMswips"
+        "versionLogicalId": "AuthorizeLambdaVersionQqD68VbbkKwEtc2jKA0ssnwdGjZ8NlwzuMRrFUY"
       }
     },
     "configValidationMode": "warn",
@@ -867,7 +854,7 @@
     "artifact": "/Users/tyler.sullivan/code/aws/serverless/token-machine/.serverless/serverless-token-authorization.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-token-authorization/dev/1638894571972-2021-12-07T16:29:31.972Z",
+    "artifactDirectoryName": "serverless/serverless-token-authorization/dev/1638981342700-2021-12-08T16:35:42.700Z",
     "artifact": "serverless-token-authorization.zip"
   }
 }
