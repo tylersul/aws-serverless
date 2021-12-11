@@ -2,7 +2,7 @@
 
 const authorizer = require('./authorizer');
 
-module.exports.hello = async (event, context, callback) => {
+module.exports.hello = (event, context, callback) => {
   const response = {
     statusCode: 200,
     body: JSON.stringify(
@@ -41,4 +41,3 @@ module.exports.authorize = (event, token, callback) => {
     callback(e.message);
   }
 }
-

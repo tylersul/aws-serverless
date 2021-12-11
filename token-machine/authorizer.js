@@ -1,8 +1,14 @@
+// Mode that helps catch common coding isses, prevents unsafe actions, and disables confusing features.
+// Use strict disallows things like: setting a value to a variable / object without declaring it first, 
+//                                    deleting a variable / function, and dupe param names.
 'use strict';
 
+// Importing jsonwebtoken lib.
 const jwt = require('jsonwebtoken');
 
-const SECRET_KEY = 'secretKeyyyyy';
+// Set secret key value.
+const SECRET_KEY = 'topSecretKeyValue';
+
 
 module.exports.generatePolicy = (token, methodArn) => {
   if (this.decodeToken(token) != null) {

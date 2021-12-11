@@ -173,7 +173,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-token-authorization/dev/1638981342700-2021-12-08T16:35:42.700Z/serverless-token-authorization.zip"
+          "S3Key": "serverless/serverless-token-authorization/dev/1639078455520-2021-12-09T19:34:15.520Z/serverless-token-authorization.zip"
         },
         "Handler": "handler.hello",
         "Runtime": "nodejs12.x",
@@ -198,7 +198,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-token-authorization/dev/1638981342700-2021-12-08T16:35:42.700Z/serverless-token-authorization.zip"
+          "S3Key": "serverless/serverless-token-authorization/dev/1639078455520-2021-12-09T19:34:15.520Z/serverless-token-authorization.zip"
         },
         "Handler": "handler.generateToken",
         "Runtime": "nodejs12.x",
@@ -223,7 +223,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-token-authorization/dev/1638981342700-2021-12-08T16:35:42.700Z/serverless-token-authorization.zip"
+          "S3Key": "serverless/serverless-token-authorization/dev/1639078455520-2021-12-09T19:34:15.520Z/serverless-token-authorization.zip"
         },
         "Handler": "handler.authorize",
         "Runtime": "nodejs12.x",
@@ -241,34 +241,34 @@
         "AuthorizeLogGroup"
       ]
     },
-    "HelloLambdaVersioniiHjLU81hJPf6t4yLwNLBCstEOuzUGNFI4s0azAk": {
+    "HelloLambdaVersionsFA7nYxNid5U0eEZUgf6jffXJWYf9aXkEJRAeW04": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "HelloLambdaFunction"
         },
-        "CodeSha256": "I27gGyYzbPZf+u2+9xn3NMc7S+O0EnFskzLZ3O3heSY="
+        "CodeSha256": "GUUvioudr0lmTiCA+Faub2HA5ArqFB003XLcd9maAws="
       }
     },
-    "GenerateTokenLambdaVersionlmaOfIlhYM3qLRJU7NzAebyQkDjMRLkfXk3Gm6jYbNM": {
+    "GenerateTokenLambdaVersionI9zjWXePYuuadGFk1xVYYFm1RKlGMNcF7sO4nVc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GenerateTokenLambdaFunction"
         },
-        "CodeSha256": "I27gGyYzbPZf+u2+9xn3NMc7S+O0EnFskzLZ3O3heSY="
+        "CodeSha256": "GUUvioudr0lmTiCA+Faub2HA5ArqFB003XLcd9maAws="
       }
     },
-    "AuthorizeLambdaVersionQqD68VbbkKwEtc2jKA0ssnwdGjZ8NlwzuMRrFUY": {
+    "AuthorizeLambdaVersionzsiqqsnAcgMuW5J7fTG4VELKgXtjhEPl2G8jev1Koc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AuthorizeLambdaFunction"
         },
-        "CodeSha256": "I27gGyYzbPZf+u2+9xn3NMc7S+O0EnFskzLZ3O3heSY="
+        "CodeSha256": "GUUvioudr0lmTiCA+Faub2HA5ArqFB003XLcd9maAws="
       }
     },
     "ApiGatewayRestApi": {
@@ -440,7 +440,7 @@
         "Type": "TOKEN"
       }
     },
-    "ApiGatewayDeployment1638981341177": {
+    "ApiGatewayDeployment1639078453625": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -467,11 +467,11 @@
           }
         ]
       },
-      "DependsOn": "ApiGatewayDeployment1638981341177"
+      "DependsOn": "ApiGatewayDeployment1639078453625"
     },
     "ApiGatewayUsagePlan": {
       "Type": "AWS::ApiGateway::UsagePlan",
-      "DependsOn": "ApiGatewayDeployment1638981341177",
+      "DependsOn": "ApiGatewayDeployment1639078453625",
       "Properties": {
         "ApiStages": [
           {
@@ -621,7 +621,7 @@
     "HelloLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "HelloLambdaVersioniiHjLU81hJPf6t4yLwNLBCstEOuzUGNFI4s0azAk"
+        "Ref": "HelloLambdaVersionsFA7nYxNid5U0eEZUgf6jffXJWYf9aXkEJRAeW04"
       },
       "Export": {
         "Name": "sls-serverless-token-authorization-dev-HelloLambdaFunctionQualifiedArn"
@@ -630,7 +630,7 @@
     "GenerateTokenLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GenerateTokenLambdaVersionlmaOfIlhYM3qLRJU7NzAebyQkDjMRLkfXk3Gm6jYbNM"
+        "Ref": "GenerateTokenLambdaVersionI9zjWXePYuuadGFk1xVYYFm1RKlGMNcF7sO4nVc"
       },
       "Export": {
         "Name": "sls-serverless-token-authorization-dev-GenerateTokenLambdaFunctionQualifiedArn"
@@ -639,7 +639,7 @@
     "AuthorizeLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AuthorizeLambdaVersionQqD68VbbkKwEtc2jKA0ssnwdGjZ8NlwzuMRrFUY"
+        "Ref": "AuthorizeLambdaVersionzsiqqsnAcgMuW5J7fTG4VELKgXtjhEPl2G8jev1Koc"
       },
       "Export": {
         "Name": "sls-serverless-token-authorization-dev-AuthorizeLambdaFunctionQualifiedArn"
